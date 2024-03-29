@@ -6,6 +6,7 @@ import (
  
 func Parse (input string) (Stack, error){
 	var stack Stack
+
     numbers := strings.Split(input, " ")
     for _, num := range numbers {
         num, err := strconv.Atoi(num)
@@ -14,6 +15,8 @@ func Parse (input string) (Stack, error){
         }
         stack.Push(num)
     }
+
+    
     return stack,nil
 }
 

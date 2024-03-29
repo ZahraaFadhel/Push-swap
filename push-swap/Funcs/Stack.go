@@ -10,13 +10,34 @@ func (s *Stack) Push(item int) {
 }
 
 
-func (s *Stack) Pop() {
+func (s *Stack) Pop() int {
     if len(s.items) == 0 {
-        return
+        return -1
     }
-    //item := s.items[len(s.items)-1]
+    item := s.items[len(s.items)-1]
     s.items = s.items[:len(s.items)-1]
-    //return item
+    return item
+}
+
+func (s *Stack) Duplicate() *Stack {
+    // Create a new stack
+    dupStack := Stack{}
+
+    // Copy the items from the original stack to the new stack in reverse order
+    for i := len(s.items) - 1; i >= 0; i-- {
+        dupStack.Push(s.items[i])
+    }
+
+    return &dupStack
+}
+
+func (s *Stack) Size() int {
+    return len(s.items)
+}
+
+
+func (s *Stack) IsEmpty() bool {
+    return s.Size() == 0
 }
 
 
@@ -25,8 +46,4 @@ func (s *Stack) Pop() {
       
 //     }
 //     return s.items[len(s.items)-1]
-// }
-
-// func (s *Stack) IsEmpty() bool {
-//     return len(s.items) == 0
 // }
