@@ -24,8 +24,8 @@ func (s *Stack) Duplicate() *Stack {
     dupStack := Stack{}
 
     // Copy the items from the original stack to the new stack in reverse order
-    for i := len(s.items) - 1; i >= 0; i-- {
-        dupStack.Push(s.items[i])
+    for _, item := range s.items {
+        dupStack.Push(item)
     }
 
     return &dupStack

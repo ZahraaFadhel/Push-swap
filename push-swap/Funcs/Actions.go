@@ -2,21 +2,21 @@ package pushswap
 
 import "fmt"
 
-func pa(a *Stack, b *Stack) {
+func Pa(a *Stack, b *Stack) {
 	a.Push(b.Pop())
 
 	fmt.Println("pa")
 
 }
 
-func pb(a *Stack, b *Stack) {
+func Pb(a *Stack, b *Stack) {
 	b.Push(a.Pop())
 
 	fmt.Println("pb")
 
 }
 
-func sa(a *Stack) {
+func Sa(a *Stack) {
 	item1 := a.Pop()
 	item2 := a.Pop()
 	a.Push(item1)
@@ -27,7 +27,7 @@ func sa(a *Stack) {
 
 
 
-func sb(b *Stack) {
+func Sb(b *Stack) {
 	item1 := b.Pop()
 	item2 := b.Pop()
 	b.Push(item1)
@@ -37,14 +37,14 @@ func sb(b *Stack) {
 
 }
 
-func ss(a *Stack, b *Stack) {
-	sa(a)
-	sb(b)
+func Ss(a *Stack, b *Stack) {
+	Sa(a)
+	Sb(b)
 
 	fmt.Println("ss")
 }
 
-func ra(a *Stack) {
+func Ra(a *Stack) {
 	item := a.Pop()
 	var stack1 Stack
 	for !a.IsEmpty() {
@@ -54,11 +54,11 @@ func ra(a *Stack) {
 	for !stack1.IsEmpty() {
 		a.Push(stack1.Pop())
 	}
-
+	
 	fmt.Println("ra")
 }
 
-func rb(b *Stack) {
+func Rb(b *Stack) {
 	item := b.Pop()
 	var stack1 Stack
 	
@@ -73,21 +73,21 @@ func rb(b *Stack) {
 	fmt.Println("rb")
 }
 
-func rr(a *Stack, b *Stack) {
-	ra(a)
-	rb(b)
+func Rr(a *Stack, b *Stack) {
+	Ra(a)
+	Rb(b)
 
 	fmt.Println("rr")
 
 }
 
-func rra(a *Stack) {
+func Rra(a *Stack) {
 	var stack1 Stack
 	for !a.IsEmpty() {
 		stack1.Push(a.Pop())
 	} 
 	item := stack1.Pop()
-
+	
 	for !stack1.IsEmpty() {
 		a.Push(stack1.Pop())
 	}
@@ -96,7 +96,7 @@ func rra(a *Stack) {
 	fmt.Println("rra")
 }
 
-func rrb(b *Stack) {
+func Rrb(b *Stack) {
 	var stack1 Stack
 	for !b.IsEmpty() {
 		stack1.Push(b.Pop())
@@ -110,9 +110,9 @@ func rrb(b *Stack) {
 	fmt.Println("rrb")
 }
 
-func rrr(a *Stack, b *Stack) {
-	rra(a)
-	rrb(b)
+func Rrr(a *Stack, b *Stack) {
+	Rra(a)
+	Rrb(b)
 
 	fmt.Println("rrr")
 
