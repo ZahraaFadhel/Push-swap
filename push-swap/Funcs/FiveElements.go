@@ -1,0 +1,5 @@
+package pushswap
+
+func FiveElementsSort () {
+	
+}

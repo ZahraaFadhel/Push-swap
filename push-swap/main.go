@@ -24,18 +24,22 @@ func main() {
 		log.Fatal("error parsing") // If they enterend an invalid input
 	}
 
+
 	//Stack B is empty for now
-	stackB := pushswap.Stack{}
+	//stackB := pushswap.Stack{}
 
 
 	fmt.Println("stack A before changing:", StackA)
 
-	if StackA.Size() == 3 {
+
+	if StackA.Size() < 3 {
+		pushswap.LessThanThreeSort(&StackA)
+	}else if StackA.Size() == 3 {
 		pushswap.ThreeElementsSort(&StackA)
 	}
 
 	fmt.Println("StackA After changing" ,StackA)
-	fmt.Println(stackB)
+	//fmt.Println(stackB)
 
 }
 

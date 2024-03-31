@@ -39,6 +39,26 @@ func (s *Stack) IsEmpty() bool {
 }
 
 
+func (s *Stack) Empty() {
+    for !s.IsEmpty() {
+        s.items = []int{}
+    }
+}
+
+func (s *Stack) Reverse () {
+    stackdup := s.Duplicate()
+
+    for !s.IsEmpty() {
+        s.Pop()
+    }
+
+    for !stackdup.IsEmpty() {
+        s.Push(stackdup.Pop())
+    }
+
+
+}
+
 // func (s *Stack) Peek() int {
 //     if len(s.items) == 0 {
       
