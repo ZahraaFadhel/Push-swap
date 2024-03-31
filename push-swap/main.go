@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 	pushswap "pushswap/push-swap/Funcs"
 )
@@ -21,7 +20,8 @@ func main() {
 	StackA, err := pushswap.Parse(input)
 
 	if err != nil {
-		log.Fatal("error parsing") // If they enterend an invalid input
+		// log.Fatal("error parsing") // If they enterend an invalid input
+		fmt.Println("Error")
 	}
 
 
@@ -30,15 +30,19 @@ func main() {
 
 
 	fmt.Println("stack A before changing:", StackA)
+	fmt.Println("Is the Stack Sorted? " , StackA.IsSorted())
 
-
-	if StackA.Size() < 3 {
+	if StackA.IsSorted() {
+		return
+	}else if StackA.Size() < 3 {
 		pushswap.LessThanThreeSort(&StackA)
 	}else if StackA.Size() == 3 {
 		pushswap.ThreeElementsSort(&StackA)
 	}
 
 	fmt.Println("StackA After changing" ,StackA)
+
+	fmt.Println("Is the Stack Sorted? " , StackA.IsSorted())
 	//fmt.Println(stackB)
 
 }

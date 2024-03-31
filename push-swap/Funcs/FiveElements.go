@@ -1,5 +1,0 @@
-package pushswap
-
-func FiveElementsSort () {
-	
-}

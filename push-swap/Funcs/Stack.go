@@ -55,9 +55,36 @@ func (s *Stack) Reverse () {
     for !stackdup.IsEmpty() {
         s.Push(stackdup.Pop())
     }
-
-
 }
+
+
+func (s *Stack) IsSorted() bool {
+    if s.IsEmpty() {
+        return true
+    }
+
+    tempStack := Stack{}
+    isSorted := true
+    prev := s.Pop()
+    tempStack.Push(prev)
+
+    for !s.IsEmpty() {
+        current := s.Pop()
+        if current > prev {
+            isSorted = false
+        }
+        prev = current
+        tempStack.Push(current)
+    }
+
+    // Restore original stack
+    for !tempStack.IsEmpty() {
+        s.Push(tempStack.Pop())
+    }
+
+    return isSorted
+}
+
 
 // func (s *Stack) Peek() int {
 //     if len(s.items) == 0 {

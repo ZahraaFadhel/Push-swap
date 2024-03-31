@@ -17,5 +17,4 @@ func LessThanThreeSort(a *Stack) {
 			return
 		}
 	}
-
 }
