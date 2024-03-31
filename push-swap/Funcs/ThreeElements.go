@@ -8,10 +8,6 @@ import (
 func ThreeElementsSort(a *Stack) {
 	stack2 := a.Duplicate()
 	item3, item2, item1 := check(stack2)
-	fmt.Println("item1" ,item1)
-	fmt.Println("item2" ,item2)
-	fmt.Println("item3" ,item3)
-	fmt.Println()
 
 	switch item1 {
 	
@@ -19,23 +15,19 @@ func ThreeElementsSort(a *Stack) {
 		if item2 == "smallest" {
 			Ra(a)
 		}else {
-			fmt.Println("largest,middle")
 			Sa(a)
 			Rra(a)
 		}
 	case "middle" :
 		if item3 == "largest" {
-			fmt.Println("middle, largest")
 			Sa(a)
 		}else {
-			fmt.Println("middle,smallest")
 			Rra(a)
 		}
 	case "smallest" :
 		if item2 == "largest" {
 			Sa(a)
 			Ra(a)
-			fmt.Println("smallest")
 		}
 	default : 	
 		fmt.Println("Sorted :>")

@@ -22,8 +22,6 @@ func (s *Stack) Pop() int {
 func (s *Stack) Duplicate() *Stack {
     // Create a new stack
     dupStack := Stack{}
-
-    // Copy the items from the original stack to the new stack in reverse order
     for _, item := range s.items {
         dupStack.Push(item)
     }

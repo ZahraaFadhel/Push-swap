@@ -27,23 +27,14 @@ func main() {
 	//Stack B is empty for now
 	stackB := pushswap.Stack{}
 
-	// StackA.Push(3)
-	// StackA.Push(2)
 
 	fmt.Println("stack A before changing:", StackA)
-
-	// stackc := StackA.Duplicate()
-	// pushswap.Rra(&StackA)
-
-	// StackA.Pop()
-
-	// fmt.Println("stack A after rra:", stackc)
 
 	if StackA.Size() == 3 {
 		pushswap.ThreeElementsSort(&StackA)
 	}
 
-	fmt.Println(StackA)
+	fmt.Println("StackA After changing" ,StackA)
 	fmt.Println(stackB)
 
 }
@@ -51,8 +42,8 @@ func main() {
 /*
 My To-Do :>
 1- Fix the bugs
-	- WHY TF ISN'T IT WORKING CORRECTLY?! (probably in the actions file)
-	- Find the error in 3 1 2
+	-(probably in the actions file) ✔
+	- Find the error in 3 1 2 ✔
 2- Write the code for the remaining conditions
 	- Less than 3
 	- 5
