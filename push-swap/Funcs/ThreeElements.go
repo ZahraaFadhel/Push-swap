@@ -12,21 +12,21 @@ func ThreeElementsSort(a *Stack) {
     switch item1 {
     case "smallest":
         if item2 == "largest" {
-            Ra(a)
+            Ra(a, true)
         } else {
-            Sa(a)
-            Rra(a)
+            Sa(a, true)
+            Rra(a, true)
         }
     case "middle":
         if item3 == "smallest" {
-            Sa(a)
+            Sa(a, true)
         } else {
-            Rra(a)
+            Rra(a, true)
         }
     case "largest":
         if item2 == "smallest" {
-            Sa(a)
-            Ra(a)
+            Sa(a, true)
+            Ra(a, true)
         }
     default:
         fmt.Println("Sorted :>")

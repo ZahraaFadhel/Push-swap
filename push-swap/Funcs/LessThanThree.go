@@ -13,7 +13,7 @@ func LessThanThreeSort(a *Stack) {
 		item2 := stack2.Pop()
 
 		if item2 > item1 {
-			Sa(a)
+			Sa(a, true)
 			return
 		}
 	}
