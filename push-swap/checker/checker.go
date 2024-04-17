@@ -10,7 +10,7 @@ import (
 
 func main() {
 	args := os.Args[1:]
-	if len(args) == 0 || len(args)>1{
+	if len(args) == 0 || len(args) > 1 {
 		return
 	}
 	input := args[0]
@@ -24,7 +24,6 @@ func main() {
 	instructions := make([]string, 0)
 
 	// to keep reading until "" in entered
-	fmt.Println("Press Enter after entering all instructions")
 	for scanner.Scan() {
 		instruction := scanner.Text()
 		if instruction == "" {
@@ -35,7 +34,6 @@ func main() {
 
 	if !ValidateInstructions(instructions) {
 		fmt.Println("Instructions not valid..")
-		os.Exit(0)
 	}
 
 	StackB := pushswap.Stack{} // empty
@@ -87,7 +85,7 @@ func ExecuteInstruction(stackA, stackB *pushswap.Stack, instruction string) erro
 	return nil
 }
 
-func ValidateInstructions(arr []string ) bool {
+func ValidateInstructions(arr []string) bool {
 	if len(arr) == 0 {
 		return false
 	}

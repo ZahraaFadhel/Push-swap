@@ -57,6 +57,6 @@ My To-Do :>
 	- 5
 	- others
 3- Error handling
-	- Duplicates
+	- Duplicates ✔ :)
 
 */
