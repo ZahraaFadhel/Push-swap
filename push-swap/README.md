@@ -19,10 +19,14 @@ checker, which takes integer arguments and reads instructions on the standard in
 
 1. Clone the repository "https://learn.reboot01.com/git/araed/push-swap.git" 
 2. To try the push-swap program run the following command : "go run . [1 3 4]" where numbers are separated by a space
+<<<<<<< HEAD
 3. To try the checker program, navigate to checker directory then run "go run [1 3 4]" and enter the instruction one by one each followed by a new line 
 or follow these steps:
 - run the command "go build checker.go" after navigating to checker directory
 - use this command format "echo -e "rra\npb\nsa\nrra\npa" | ./checker "3 2 1 0""
+=======
+3. To try the checker program, navigate to checker directory then run "go run [1 3 4]" and enter the instruction one by one each followed by a new line or use this command format "echo -e "rra\npb\nsa\nrra\npa" | ./checker "3 2 1 0""
+>>>>>>> 663eaceddeeccbd8dc43d9b94159c7f1f8736faa
 
 ## Contributing
   - Zahraa Fadhel "zfadhel"
