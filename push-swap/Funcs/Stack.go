@@ -5,6 +5,11 @@ type Stack struct {
 }
 
 
+func  (s *Stack) Peek() int {
+    return s.items[len(s.items)-1]
+}
+
+
 func (s *Stack) Push(item int) {
     s.items = append(s.items, item)
 }

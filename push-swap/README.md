@@ -9,7 +9,7 @@
 
 ## Description
 
-Push-Swap is a very simple project that uses a Non-Comparative Sorting Algorithm. You have at your disposal a list of int values, two stacks (a and b) and a set of instructions.
+Push-Swap is a very simple project that uses a Non-Comparative Sorting Algorithm. 
 
 There are two programs: 
 push-swap, which calculates and displays on the standard output the smallest program using push-swap instruction language that sorts integer arguments received.

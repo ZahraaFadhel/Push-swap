@@ -38,6 +38,8 @@ func main() {
 		pushswap.LessThanThreeSort(&StackA)
 	}else if StackA.Size() == 3 {
 		pushswap.ThreeElementsSort(&StackA)
+	} else {
+		pushswap.ManyElementsSort(&StackA)
 	}
 
 	fmt.Println("StackA After changing" ,StackA)
