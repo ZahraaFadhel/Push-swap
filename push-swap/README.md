@@ -31,10 +31,10 @@ or follow these steps:
 
 ## Implementation Details
 
-sa/sb: Swap the top two elements of stack A/B.
-ss: Perform sa and sb simultaneously.
-pa/pb: Push the top element of stack A/B to the top of stack B/A.
-ra/rb: Rotate the stack A/B in a clockwise direction (the top element becomes the bottom).
-rr: Perform ra and rb simultaneously.
-rra/rrb: Rotate the stack A/B in an anticlockwise direction (the bottom element becomes the top).
-rrr: Perform rra and rrb simultaneously.
+- sa/sb: Swap the top two elements of stack A/B.
+- ss: Perform sa and sb simultaneously.
+- pa/pb: Push the top element of stack A/B to the top of stack B/A.
+- ra/rb: Rotate the stack A/B in a clockwise direction (the top element becomes the bottom).
+- rr: Perform ra and rb simultaneously.
+- rra/rrb: Rotate the stack A/B in an anticlockwise direction (the bottom element becomes the top).
+- rrr: Perform rra and rrb simultaneously.
