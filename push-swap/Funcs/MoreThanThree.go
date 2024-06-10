@@ -1,43 +1,55 @@
 package pushswap
 
 import (
-	// "fmt"
 	"math"
 )
 
 func ManyElementsSort(a *Stack) {
-	if a.Size() == 0 || a.Size() == 1 {
+	if a.Size() <= 1 {
 		return
 	}
 
-	smallest, _ := findSmallestAndLargest(a)
+	b := &Stack{}
 
-	for i := 0; i < a.Size(); i++ {
-		if a.items[0] == smallest {
-			break
-		}
-		Ra(a, true)
+	// Move all elements from a to b
+	for !a.IsEmpty() {
+		Pb(a, b, true)
 	}
 
+	// Move elements back to a in sorted order
+	for !b.IsEmpty() {
+		_, smallestIndex := findSmallest(b)
+
+		// Bring the smallest element to the top of b
+		if smallestIndex <= b.Size()/2 {
+			for i := 0; i < smallestIndex; i++ {
+				Rb(b, true)
+			}
+		} else {
+			for i := 0; i < b.Size()-smallestIndex; i++ {
+				Rrb(b, true)
+			}
+		}
+
+		Pa(a, b, true)
+	}
 }
 
-func findSmallestAndLargest(stack *Stack) (int, int) {
+// findSmallest finds the smallest element in the stack and its index
+func findSmallest(stack *Stack) (int, int) {
 	smallest := math.MaxInt64
-	largest := math.MinInt64
+	smallestIndex := 0
 
 	for i := 0; i < stack.Size(); i++ {
 		item := stack.Peek()
 
 		if item < smallest {
 			smallest = item
+			smallestIndex = i
 		}
 
-		if item > largest {
-			largest = item
-		}
-
-		Ra(stack, true)
+		Rb(stack, false)
 	}
 
-	return smallest, largest
+	return smallest, smallestIndex
 }

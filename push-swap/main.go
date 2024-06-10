@@ -21,30 +21,27 @@ func main() {
 
 	if err != nil {
 		// log.Fatal("error parsing") // If they enterend an invalid input
-		fmt.Println("Error")
+		fmt.Println("Error: ", err)
 	}
-
 
 	//Stack B is empty for now
 	//stackB := pushswap.Stack{}
 
-
 	fmt.Println("stack A before changing:", StackA)
-	fmt.Println("Is the Stack Sorted? " , StackA.IsSorted())
+	fmt.Println("Is the Stack Sorted? ", StackA.IsSorted())
 
 	if StackA.IsSorted() {
 		return
-	}else if StackA.Size() < 3 {
+	} else if StackA.Size() < 3 {
 		pushswap.LessThanThreeSort(&StackA)
-	}else if StackA.Size() == 3 {
+	} else if StackA.Size() == 3 {
 		pushswap.ThreeElementsSort(&StackA)
 	} else {
 		pushswap.ManyElementsSort(&StackA)
 	}
 
-	fmt.Println("StackA After changing" ,StackA)
-
-	fmt.Println("Is the Stack Sorted? " , StackA.IsSorted())
+	fmt.Println("StackA After changing", StackA)
+	fmt.Println("Is the Stack Sorted? ", StackA.IsSorted())
 	//fmt.Println(stackB)
 
 }

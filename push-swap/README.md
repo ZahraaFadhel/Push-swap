@@ -12,21 +12,17 @@
 Push-Swap is a very simple project that uses a Non-Comparative Sorting Algorithm. 
 
 There are two programs: 
-push-swap, which calculates and displays on the standard output the smallest program using push-swap instruction language that sorts integer arguments received.
-checker, which takes integer arguments and reads instructions on the standard input. Once read, checker executes them and displays OK if integers are sorted. Otherwise, it will display KO.
+- push-swap, which calculates and displays on the standard output the smallest program using push-swap instruction language that sorts integer arguments received.
+- checker, which takes integer arguments and reads instructions on the standard input. Once read, checker executes them and displays OK if integers are sorted. Otherwise, it will display KO.
 
 ## Usage
 
 1. Clone the repository "https://learn.reboot01.com/git/araed/push-swap.git" 
-2. To try the push-swap program run the following command : "go run . [1 3 4]" where numbers are separated by a space
-<<<<<<< HEAD
+2. To try the push-swap program run the following command : [ go run . "1 3 4" ] where numbers are separated by a space
 3. To try the checker program, navigate to checker directory then run "go run [1 3 4]" and enter the instruction one by one each followed by a new line 
 or follow these steps:
 - run the command "go build checker.go" after navigating to checker directory
 - use this command format "echo -e "rra\npb\nsa\nrra\npa" | ./checker "3 2 1 0""
-=======
-3. To try the checker program, navigate to checker directory then run "go run [1 3 4]" and enter the instruction one by one each followed by a new line or use this command format "echo -e "rra\npb\nsa\nrra\npa" | ./checker "3 2 1 0""
->>>>>>> 663eaceddeeccbd8dc43d9b94159c7f1f8736faa
 
 ## Contributing
   - Zahraa Fadhel "zfadhel"
