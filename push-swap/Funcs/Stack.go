@@ -4,6 +4,9 @@ type Stack struct {
     items []int
 }
 
+func (s *Stack) Bottom() int {
+	return s.items[0]
+}
 
 func  (s *Stack) Peek() int {
     return s.items[len(s.items)-1]

@@ -30,6 +30,11 @@ func Sa(a *Stack, print bool) {
 }
 
 func Sb(b *Stack, print bool) {
+    if b.Size() == 1 {
+        fmt.Println("sb")
+        return
+    }
+    
     item1 := b.Pop()
     item2 := b.Pop()
     b.Push(item1)

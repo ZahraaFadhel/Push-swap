@@ -22,6 +22,7 @@ func main() {
 	if err != nil {
 		// log.Fatal("error parsing") // If they enterend an invalid input
 		fmt.Println("Error: ", err)
+		return
 	}
 
 	//Stack B is empty for now
