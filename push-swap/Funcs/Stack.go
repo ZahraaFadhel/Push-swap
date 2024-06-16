@@ -8,6 +8,10 @@ func (s *Stack) Bottom() int {
 	return s.items[0]
 }
 
+func (s *Stack) Top() int {
+	return s.items[s.Size()-1]
+}
+
 func  (s *Stack) Peek() int {
     return s.items[len(s.items)-1]
 }
@@ -20,12 +24,13 @@ func (s *Stack) Push(item int) {
 
 func (s *Stack) Pop() int {
     if len(s.items) == 0 {
-        return -1
+        panic("Pop from empty stack")
     }
     item := s.items[len(s.items)-1]
     s.items = s.items[:len(s.items)-1]
     return item
 }
+
 
 func (s *Stack) Duplicate() *Stack {
     // Create a new stack
@@ -93,10 +98,3 @@ func (s *Stack) IsSorted() bool {
     return isSorted
 }
 
-
-// func (s *Stack) Peek() int {
-//     if len(s.items) == 0 {
-      
-//     }
-//     return s.items[len(s.items)-1]
-// }

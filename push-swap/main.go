@@ -26,7 +26,7 @@ func main() {
 	}
 
 	//Stack B is empty for now
-	//stackB := pushswap.Stack{}
+	stackB := pushswap.Stack{}
 
 	fmt.Println("stack A before changing:", StackA)
 	fmt.Println("Is the Stack Sorted? ", StackA.IsSorted())
@@ -38,7 +38,7 @@ func main() {
 	} else if StackA.Size() == 3 {
 		pushswap.ThreeElementsSort(&StackA)
 	} else {
-		pushswap.ManyElementsSort(&StackA)
+		pushswap.ManyElementsSort(&StackA, &stackB)
 	}
 
 	fmt.Println("StackA After changing", StackA)
@@ -47,16 +47,3 @@ func main() {
 
 }
 
-/*
-My To-Do :>
-1- Fix the bugs
-	-(probably in the actions file) ✔
-	- Find the error in 3 1 2 ✔
-2- Write the code for the remaining conditions
-	- Less than 3
-	- 5
-	- others
-3- Error handling
-	- Duplicates ✔ :)
-
-*/
