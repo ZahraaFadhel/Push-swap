@@ -10,7 +10,7 @@ func Parse(input string) (Stack, error) {
 	var stack Stack
 
 	if input == " " {
-		return stack, errors.New("emoty stack")
+		return stack, errors.New("empty stack")
 	}
 	numbers := strings.Split(input, " ")
 	for _, num := range numbers {

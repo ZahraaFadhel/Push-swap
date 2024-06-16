@@ -5,7 +5,9 @@ import (
     "math"
 )
 
-func ThreeElementsSort(a *Stack) {
+func ThreeElementsSort(a *Stack) int {
+
+    count := 0
     stack2 := a.Duplicate()
     item1, item2, item3 := check(stack2)
 
@@ -13,24 +15,32 @@ func ThreeElementsSort(a *Stack) {
     case "smallest":
         if item2 == "largest" {
             Ra(a, true)
+            count++
         } else {
             Sa(a, true)
             Rra(a, true)
+            count = count+2
         }
     case "middle":
         if item3 == "smallest" {
             Sa(a, true)
+            count++
         } else {
             Rra(a, true)
+            count++
         }
     case "largest":
         if item2 == "smallest" {
             Sa(a, true)
             Ra(a, true)
+            count += 2
         }
     default:
         fmt.Println("Sorted :>")
     }
+
+
+    return count
 }
 
 func check(stack *Stack) (string, string, string) {
