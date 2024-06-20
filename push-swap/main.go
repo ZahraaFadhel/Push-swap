@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-	pushswap "pushswap/Funcs"
+	pushswap "pushswap/push-swap/Funcs"
 )
 
 func main() {
