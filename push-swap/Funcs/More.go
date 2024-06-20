@@ -51,8 +51,7 @@ func ManyElementsSort(a *Stack, b *Stack) {
 		MovementsCount++
 	}
 	fmt.Println()
-	fmt.Println(MovementsCount)
-
+	fmt.Println("How many instructions?", MovementsCount)
 
 }
 
