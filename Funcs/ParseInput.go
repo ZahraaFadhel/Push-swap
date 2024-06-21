@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func Parse2(input string) (Stack, error) {
+func Parse(input string) (Stack, error) {
 	var stack Stack
 
 	if input == " " {

@@ -19,6 +19,11 @@ There are two programs:
 
 1. Clone the repository "https://learn.reboot01.com/git/araed/push-swap.git" 
 2. To try the push-swap program run the following command : [ go run . "1 3 4" ] where numbers are separated by a space
+Note : to try for 100 random elements between -100 and 100 run the following:
+- ```sh
+   numbers=$(seq -100 100 | shuf -n 100 | tr '\n' ' ' | sed 's/[[:space:]]*$//')
+- ```sh 
+  $ go run . "$numbers"
 3. To try the checker program, navigate to checker directory then run "go run [1 3 4]" and enter the instruction one by one each followed by a new line 
 or follow these steps:
 - run the command "go build checker.go" after navigating to checker directory

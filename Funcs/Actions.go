@@ -2,7 +2,7 @@ package pushswap
 
 import "fmt"
 
-func Pa2(a *Stack, b *Stack, print bool) {
+func Pa(a *Stack, b *Stack, print bool) {
 	a.Push(b.Pop())
 
 	if print {
@@ -10,7 +10,7 @@ func Pa2(a *Stack, b *Stack, print bool) {
 	}
 }
 
-func Pb2(a *Stack, b *Stack, print bool) {
+func Pb(a *Stack, b *Stack, print bool) {
 	b.Push(a.Pop())
 
 	if print {
@@ -18,7 +18,7 @@ func Pb2(a *Stack, b *Stack, print bool) {
 	}
 }
 
-func Sa2(a *Stack, print bool) {
+func Sa(a *Stack, print bool) {
 	item1 := a.Pop()
 	item2 := a.Pop()
 	a.Push(item1)
@@ -29,7 +29,7 @@ func Sa2(a *Stack, print bool) {
 	}
 }
 
-func Sb2(b *Stack, print bool) {
+func Sb(b *Stack, print bool) {
 	item1 := b.Pop()
 	item2 := b.Pop()
 	b.Push(item1)
@@ -40,16 +40,16 @@ func Sb2(b *Stack, print bool) {
 	}
 }
 
-func Ss2(a *Stack, b *Stack, print bool) {
-	Sa2(a, print)
-	Sb2(b, print)
+func Ss(a *Stack, b *Stack, print bool) {
+	Sa(a, print)
+	Sb(b, print)
 
 	if print {
 		fmt.Println("ss")
 	}
 }
 
-func Ra2(a *Stack, print bool) {
+func Ra(a *Stack, print bool) {
 	item := a.Pop()
 	var stack1 Stack
 	for !a.IsEmpty() {
@@ -65,7 +65,7 @@ func Ra2(a *Stack, print bool) {
 	}
 }
 
-func Rb2(b *Stack, print bool) {
+func Rb(b *Stack, print bool) {
 	item := b.Pop()
 	var stack1 Stack
 
@@ -82,16 +82,16 @@ func Rb2(b *Stack, print bool) {
 	}
 }
 
-func Rr2(a *Stack, b *Stack, print bool) {
-	Ra2(a, print)
-	Rb2(b, print)
+func Rr(a *Stack, b *Stack, print bool) {
+	Ra(a, print)
+	Rb(b, print)
 
 	if print {
 		fmt.Println("rr")
 	}
 }
 
-func Rra2(a *Stack, print bool) {
+func Rra(a *Stack, print bool) {
 	var stack1 Stack
 	for !a.IsEmpty() {
 		stack1.Push(a.Pop())
@@ -108,7 +108,7 @@ func Rra2(a *Stack, print bool) {
 	}
 }
 
-func Rrb2(b *Stack, print bool) {
+func Rrb(b *Stack, print bool) {
 	var stack1 Stack
 	for !b.IsEmpty() {
 		stack1.Push(b.Pop())
@@ -125,9 +125,9 @@ func Rrb2(b *Stack, print bool) {
 	}
 }
 
-func Rrr2(a *Stack, b *Stack, print bool) {
-	Rra2(a, print)
-	Rrb2(b, print)
+func Rrr(a *Stack, b *Stack, print bool) {
+	Rra(a, false)
+	Rrb(b, false)
 
 	if print {
 		fmt.Println("rrr")

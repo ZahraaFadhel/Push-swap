@@ -1,5 +1,7 @@
 package pushswap
 
+// import "fmt"
+
 type Stack struct {
 	items []int
 }
@@ -24,13 +26,26 @@ func (s *Stack) Peek() int {
 	return s.items[0]
 }
 
+func (s *Stack) Top() int {
+	return s.items[0]
+}
+
+func (s *Stack) Bottom() int {
+	return s.items[s.Size()-1]
+}
+
 func (s *Stack) Duplicate() *Stack {
 	// Create a new stack
 	dupStack := Stack{}
+	temp := Stack{}
+
 	for _, item := range s.items {
-		dupStack.Push(item)
+		temp.Push(item)
 	}
 
+	for !temp.IsEmpty() {
+		dupStack.Push(temp.Pop())
+	}
 	return &dupStack
 }
 
@@ -61,29 +76,14 @@ func (s *Stack) Reverse() {
 }
 
 func (s *Stack) IsSorted() bool {
-	if s.IsEmpty() {
-		return true
-	}
+	
+    for i:=0; i<s.Size()-1; i++ {
+        if s.items[i] > s.items[i+1]{
+            return false
+        }
+    }
 
-	tempStack := Stack{}
-	isSorted := true
-	smallest := s.Pop()
-	tempStack.Push(smallest)
-
-	for !s.IsEmpty() {
-		current := s.Pop()
-		if current < smallest {
-			isSorted = false
-		}
-		tempStack.Push(current)
-	}
-
-	// Restore original stack
-	for !tempStack.IsEmpty() {
-		s.Push(tempStack.Pop())
-	}
-
-	return isSorted
+	return true
 }
 
 // func (s *Stack) Peek() int {

@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"os"
-	pushswap2 "pushswap/checker/Funcs2"
+	pushswap "pushswap/Funcs"
 )
 
 func main() {
@@ -14,7 +14,7 @@ func main() {
 		return
 	}
 	input := args[0]
-	StackA, err := pushswap2.Parse2(input)
+	StackA, err := pushswap.Parse(input)
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
@@ -38,7 +38,7 @@ func main() {
 		os.Exit(0)
 	}
 
-	StackB := pushswap2.Stack{} // empty
+	StackB := pushswap.Stack{} // empty
 	for _, instruction := range instructions {
 		ExecuteInstruction(&StackA, &StackB, instruction)
 	}
@@ -57,30 +57,30 @@ func main() {
 	}
 }
 
-func ExecuteInstruction(stackA, stackB *pushswap2.Stack, instruction string) error {
+func ExecuteInstruction(stackA, stackB *pushswap.Stack, instruction string) error {
 	switch instruction {
 	case "pa":
-		pushswap2.Pa2(stackA, stackB, true)
+		pushswap.Pa(stackA, stackB, true)
 	case "pb":
-		pushswap2.Pb2(stackA, stackB, true)
+		pushswap.Pb(stackA, stackB, true)
 	case "sa":
-		pushswap2.Sa2(stackA, true)
+		pushswap.Sa(stackA, true)
 	case "sb":
-		pushswap2.Sb2(stackB, true)
+		pushswap.Sb(stackB, true)
 	case "ss":
-		pushswap2.Ss2(stackA, stackB, true)
+		pushswap.Ss(stackA, stackB, true)
 	case "ra":
-		pushswap2.Ra2(stackA, true)
+		pushswap.Ra(stackA, true)
 	case "rb":
-		pushswap2.Rb2(stackB, true)
+		pushswap.Rb(stackB, true)
 	case "rr":
-		pushswap2.Rr2(stackA, stackB, true)
+		pushswap.Rr(stackA, stackB, true)
 	case "rra":
-		pushswap2.Rra2(stackA, true)
+		pushswap.Rra(stackA, true)
 	case "rrb":
-		pushswap2.Rrb2(stackB, true)
+		pushswap.Rrb(stackB, true)
 	case "rrr":
-		pushswap2.Rrr2(stackA, stackB, true)
+		pushswap.Rrr(stackA, stackB, true)
 	default:
 		return errors.New("unknown instruction")
 	}
