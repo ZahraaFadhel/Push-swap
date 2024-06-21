@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-	pushswap "pushswap/push-swap/Funcs"
+	pushswap "pushswap/Funcs"
 )
 
 func main() {
@@ -46,4 +46,3 @@ func main() {
 	//fmt.Println(stackB)
 
 }
-
