@@ -30,7 +30,7 @@ func main() {
 	stackB := pushswap.Stack{}
 
 	fmt.Println("stack A before changing:", StackA)
-	fmt.Println("Is the Stack Sorted? ", StackA.IsSorted())
+	fmt.Println("Is the Stack Sorted?", StackA.IsSorted())
 
 	if StackA.IsSorted() {
 		return
@@ -43,7 +43,7 @@ func main() {
 	}
 
 	fmt.Println("StackA After changing", StackA)
-	fmt.Println("Is the Stack Sorted? ", StackA.IsSorted())
+	fmt.Println("Is the Stack Sorted?", StackA.IsSorted())
 	//fmt.Println(stackB)
 
 }
