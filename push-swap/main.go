@@ -1,5 +1,6 @@
 package main
-
+// index 0 is the top
+// in sorting index 0 must be smallest
 import (
 	"fmt"
 	"os"
