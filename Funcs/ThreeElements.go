@@ -18,20 +18,20 @@ func ThreeElementsSort(a *Stack) int {
         }
     case "middle":
         if item3 == "smallest" {
-            Ra(a, true)
+            Rra(a, true)
             count++
         } else {
-            Rra(a, true)
+            Sa(a, true)
             count++
         }
     case "largest":
         if item2 == "smallest" {
-            Sa(a, true)
-            Ra(a, true)
-            count += 2
-        } else {
             Ra(a, true)
             count++
+        } else {
+            Sa(a, true)
+            Rra(a, true)
+            count+=2
         }
     }
 
