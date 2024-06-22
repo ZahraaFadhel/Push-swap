@@ -1,4 +1,5 @@
 package main
+
 // index 0 is the top
 // in sorting index 0 must be smallest
 import (
@@ -21,29 +22,36 @@ func main() {
 	StackA, err := pushswap.Parse(input)
 
 	if err != nil {
-		// log.Fatal("error parsing") // If they enterend an invalid input
-		fmt.Println("Error: ", err)
+		// log.Fatal("Error") // If they enterend an invalid input
+		fmt.Println("Error")
 		return
 	}
 
 	//Stack B is empty for now
 	stackB := pushswap.Stack{}
 
-	fmt.Println("stack A before changing:", StackA)
-	fmt.Println("Is the Stack Sorted?", StackA.IsSorted())
-
+	count := 0
 	if StackA.IsSorted() {
+		fmt.Println("Already Sorted :>")
 		return
-	} else if StackA.Size() < 3 {
-		pushswap.LessThanThreeSort(&StackA)
-	} else if StackA.Size() == 3 {
-		pushswap.ThreeElementsSort(&StackA)
 	} else {
-		pushswap.ManyElementsSort(&StackA, &stackB)
+		fmt.Print("StackA before changing: ")
+		StackA.PrintStack()
 	}
 
-	fmt.Println("StackA After changing", StackA)
+	if StackA.Size() < 3 {
+		count += pushswap.LessThanThreeSort(&StackA)
+	} else if StackA.Size() == 3 {
+		count += pushswap.ThreeElementsSort(&StackA)
+	} else {
+		count += pushswap.ManyElementsSort(&StackA, &stackB)
+	}
+
+	fmt.Print("StackA After changing: ")
+	StackA.PrintStack()
 	fmt.Println("Is the Stack Sorted?", StackA.IsSorted())
+	fmt.Println("How many instructions?", count)
+
 	//fmt.Println(stackB)
 
 }
