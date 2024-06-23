@@ -24,7 +24,6 @@ func main() {
 	instructions := make([]string, 0)
 
 	// to keep reading until "" in entered
-	fmt.Println("Instructions")
 	for scanner.Scan() {
 		instruction := scanner.Text()
 		if instruction == "" {
