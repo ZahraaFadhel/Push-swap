@@ -30,28 +30,18 @@ func main() {
 	//Stack B is empty for now
 	stackB := pushswap.Stack{}
 
-	count := 0
 	if StackA.IsSorted() {
-		fmt.Println("Already Sorted :>")
 		return
-	} else {
-		fmt.Print("StackA before changing: ")
-		StackA.PrintStack()
-	}
-
+	} 
 	if StackA.Size() < 3 {
-		count += pushswap.LessThanThreeSort(&StackA)
+		 pushswap.LessThanThreeSort(&StackA)
 	} else if StackA.Size() == 3 {
-		count += pushswap.ThreeElementsSort(&StackA)
+		pushswap.ThreeElementsSort(&StackA)
 	} else {
-		count += pushswap.ManyElementsSort(&StackA, &stackB)
+		pushswap.ManyElementsSort(&StackA, &stackB)
 	}
 
-	fmt.Print("StackA After changing: ")
-	StackA.PrintStack()
-	fmt.Println("Is the Stack Sorted?", StackA.IsSorted())
-	fmt.Println("How many instructions?", count)
-
-	//fmt.Println(stackB)
+	// fmt.Println("Is the Stack Sorted?", StackA.IsSorted())
+	// fmt.Println("How many instructions?", count)
 
 }
