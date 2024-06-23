@@ -226,6 +226,38 @@ func SetCheapest(a *Stack) {
 	}
 }
 
+func GetMax(a *Stack) int {
+	max := a.items[0].data
+	for _, v := range a.items {
+		if v.data > max {
+			max = v.data
+		}
+	}
+	return max
+}
+
+func GetMin(a *Stack) int {
+	min := a.items[0].data
+	for _, v := range a.items {
+		if v.data < min {
+			min = v.data
+		}
+	}
+	return min
+}
+
+func GetIndex(a *Stack, min int) int {
+	counter := 0
+	for i := 0; i < a.Size(); i++ {
+
+		if a.items[i].data == min {
+			return counter
+		}
+		counter++
+	}
+	return -1
+}
+
 // func ManyElementsSort(a *Stack, b *Stack) {
 
 // 	// if a.Size() == 6 {
@@ -275,66 +307,34 @@ func SetCheapest(a *Stack) {
 
 // }
 
-func SortSix(a *Stack, b *Stack) {
-	MovementsCount := 0
+// func SortSix(a *Stack, b *Stack) {
+// 	MovementsCount := 0
 
-	for a.Size() != 4 {
-		Pb(a, b, true)
-		MovementsCount++
-	}
+// 	for a.Size() != 4 {
+// 		Pb(a, b, true)
+// 		MovementsCount++
+// 	}
 
-	// Sort 4 elements stack
-	if !a.IsSorted() {
-		max := GetMax(a)
-		min := GetMin(a)
-		if a.Bottom() == max && a.Peek() == min && a.items[1].data > a.items[2].data {
-			Ra(a, true)
-			Sa(a, true)
-			MovementsCount += 2
-			if b.Peek() == GetMin(b) {
-				Rrr(a, b, true)
-				MovementsCount++
-			} else {
-				Rra(a, true)
-				MovementsCount++
-			}
-		}
-	}
+// 	// Sort 4 elements stack
+// 	if !a.IsSorted() {
+// 		max := GetMax(a)
+// 		min := GetMin(a)
+// 		if a.Bottom() == max && a.Peek() == min && a.items[1].data > a.items[2].data {
+// 			Ra(a, true)
+// 			Sa(a, true)
+// 			MovementsCount += 2
+// 			if b.Peek() == GetMin(b) {
+// 				Rrr(a, b, true)
+// 				MovementsCount++
+// 			} else {
+// 				Rra(a, true)
+// 				MovementsCount++
+// 			}
+// 		}
+// 	}
 
-	for !b.IsEmpty() {
-		Pa(a, b, true)
-		MovementsCount++
-	}
-}
-
-func GetMax(a *Stack) int {
-	max := a.items[0].data
-	for _, v := range a.items {
-		if v.data > max {
-			max = v.data
-		}
-	}
-	return max
-}
-
-func GetMin(a *Stack) int {
-	min := a.items[0].data
-	for _, v := range a.items {
-		if v.data < min {
-			min = v.data
-		}
-	}
-	return min
-}
-
-func GetIndex(a *Stack, min int) int {
-	counter := 0
-	for i := 0; i < a.Size(); i++ {
-
-		if a.items[i].data == min {
-			return counter
-		}
-		counter++
-	}
-	return -1
-}
+// 	for !b.IsEmpty() {
+// 		Pa(a, b, true)
+// 		MovementsCount++
+// 	}
+// }
