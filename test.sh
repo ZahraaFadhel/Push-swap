@@ -7,8 +7,8 @@ echo -e
 
 echo '2- Try to run ./push-swap "2 1 3 6 5 8". does it display a valid solution and less than 9 instructions?'
 go run ./push-swap "2 1 3 6 5 8"
-echo -e "Total number of instructions:" 
-go run ./push-swap "2 1 3 6 5 8" | wc -l
+echo -e "Total number of instructions: $(go run ./push-swap "$ARG" | wc -l)"
+
 
 echo -e
 
@@ -32,8 +32,8 @@ echo '6- Try to run ./push-swap "<5 random numbers>" with 5 random numbers inste
 echo 'Enter 5 numbers seperated by spaces:' 
 read -p "> " Input
 go run ./push-swap "$Input"
-echo -e "Total number of instructions:" 
-go run ./push-swap "$Input" | wc -l
+echo -e "Total number of instructions: $(go run ./push-swap "$ARG" | wc -l)"
+
 
 echo -e 
 
@@ -41,9 +41,7 @@ echo '7- Again, Try to run ./push-swap "<5 random numbers>" with another 5 rando
 echo 'Enter 5 numbers seperated by spaces:' 
 read -p "> " Input
 go run ./push-swap "$Input"
-echo -e "Total number of instructions:" 
-go run ./push-swap "$Input" | wc -l
-
+echo -e "Total number of instructions: $(go run ./push-swap "$ARG" | wc -l)"
 
 echo -e 
 
@@ -75,12 +73,12 @@ ARG="4 67 3 87 23"; go run ./push-swap "$ARG" | go run ./checker "$ARG"
 
 echo -e
 
-echo "13- Try to run ARG="100 random numbers"; ./push-swap "'$ARG'" with 100 random different numbers instead of the tag. Does it display less than 700 commands? We will test 100 random numbers for you"
+echo "13- Try to run ARG="100 random numbers"; ./push-swap "'$ARG'" with 100 random different numbers instead of the tag. Does it display less than 700 commands? \nWe will test 100 random numbers for you"
 ARG=$(seq -100 100 | shuf -n 100 | tr '\n' ' ' | sed 's/[[:space:]]*$//')
-echo Numbers are: $ARG
+echo Numbers are: [$ARG]
 go run ./push-swap "$ARG"
-echo -e "Total number of instructions:"
-go run ./push-swap "$ARG" | wc -l
+echo -e "Total number of instructions: $(go run ./push-swap "$ARG" | wc -l)"
+
 
 echo -e 
 
