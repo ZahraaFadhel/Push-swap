@@ -16,7 +16,7 @@ func main() {
 	input := args[0]
 	StackA, err := pushswap.Parse(input)
 	if err != nil {
-		fmt.Println("Error:", err)
+		fmt.Println("Error")
 		return
 	}
 
@@ -24,7 +24,7 @@ func main() {
 	instructions := make([]string, 0)
 
 	// to keep reading until "" in entered
-	fmt.Println("Press Enter after entering all instructions")
+	fmt.Println("Instructions")
 	for scanner.Scan() {
 		instruction := scanner.Text()
 		if instruction == "" {
@@ -43,11 +43,13 @@ func main() {
 		ExecuteInstruction(&StackA, &StackB, instruction)
 	}
 
-	fmt.Println("stack A", StackA)
+	fmt.Print("stack A: ")
+	StackA.PrintStack()
 	if StackB.IsEmpty() {
 		fmt.Println("stackB is empty")
 	} else {
-		fmt.Println("stack B", StackB)
+		fmt.Print("stack B: ")
+		StackB.PrintStack()
 	}
 
 	if StackA.IsSorted() && StackB.IsEmpty() {
@@ -60,27 +62,27 @@ func main() {
 func ExecuteInstruction(stackA, stackB *pushswap.Stack, instruction string) error {
 	switch instruction {
 	case "pa":
-		pushswap.Pa(stackA, stackB, true)
+		pushswap.Pa(stackA, stackB, false)
 	case "pb":
-		pushswap.Pb(stackA, stackB, true)
+		pushswap.Pb(stackA, stackB, false)
 	case "sa":
-		pushswap.Sa(stackA, true)
+		pushswap.Sa(stackA, false)
 	case "sb":
-		pushswap.Sb(stackB, true)
+		pushswap.Sb(stackB, false)
 	case "ss":
-		pushswap.Ss(stackA, stackB, true)
+		pushswap.Ss(stackA, stackB, false)
 	case "ra":
-		pushswap.Ra(stackA, true)
+		pushswap.Ra(stackA, false)
 	case "rb":
-		pushswap.Rb(stackB, true)
+		pushswap.Rb(stackB, false)
 	case "rr":
-		pushswap.Rr(stackA, stackB, true)
+		pushswap.Rr(stackA, stackB, false)
 	case "rra":
-		pushswap.Rra(stackA, true)
+		pushswap.Rra(stackA, false)
 	case "rrb":
-		pushswap.Rrb(stackB, true)
+		pushswap.Rrb(stackB, false)
 	case "rrr":
-		pushswap.Rrr(stackA, stackB, true)
+		pushswap.Rrr(stackA, stackB, false)
 	default:
 		return errors.New("unknown instruction")
 	}

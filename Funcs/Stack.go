@@ -1,37 +1,58 @@
 package pushswap
 
+import "fmt"
+
 // import "fmt"
 
 type Stack struct {
-	items []int
+	items []E
 }
 
-func (s *Stack) Push(item int) {
-	s.items = append([]int{item}, s.items...)
+type E struct {
+	data int
+    target int
+    cost int
+    cheapest bool
 }
 
-func (s *Stack) Pop() int {
+func (s *Stack) PrintStack(){
+    fmt.Print("[")
+    for i, e := range s.items {
+        fmt.Print(e.data)
+        if i != s.Size()-1{
+            fmt.Print(" ")
+        }
+    }
+    fmt.Print("]")
+    fmt.Println()
+}
+
+func (s *Stack) Push(item E) {
+	s.items = append([]E{item}, s.items...)
+}
+
+func (s *Stack) Pop() E {
 	if len(s.items) == 0 {
-		return -1
+		return E{} 
 	}
-	poppedItem := s.items[0]
+	item := s.items[0]
 	s.items = s.items[1:]
-	return poppedItem
+	return item
 }
 
 func (s *Stack) Peek() int {
 	if len(s.items) == 0 {
 		return -1
 	}
-	return s.items[0]
+	return s.items[0].data
 }
 
 func (s *Stack) Top() int {
-	return s.items[0]
+	return s.items[0].data
 }
 
 func (s *Stack) Bottom() int {
-	return s.items[s.Size()-1]
+	return s.items[s.Size()-1].data
 }
 
 func (s *Stack) Duplicate() *Stack {
@@ -57,11 +78,11 @@ func (s *Stack) IsEmpty() bool {
 	return s.Size() == 0
 }
 
-func (s *Stack) Empty() {
-	for !s.IsEmpty() {
-		s.items = []int{}
-	}
-}
+// func (s *Stack) Empty() {
+// 	for !s.IsEmpty() {
+// 		s.items = []int{}
+// 	}
+// }
 
 func (s *Stack) Reverse() {
 	stackdup := s.Duplicate()
@@ -78,7 +99,7 @@ func (s *Stack) Reverse() {
 func (s *Stack) IsSorted() bool {
 	
     for i:=0; i<s.Size()-1; i++ {
-        if s.items[i] > s.items[i+1]{
+        if s.items[i].data > s.items[i+1].data{
             return false
         }
     }

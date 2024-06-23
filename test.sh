@@ -1,12 +1,12 @@
-./push-swap
+./push-swap go run .
 
-./push-swap "2 1 3 6 5 8".
+./push-swap/main.go "2 1 3 6 5 8".
 
-./push-swap "0 1 2 3 4 5"
+./push-swap/main.go "0 1 2 3 4 5"
 
-./push-swap "0 one 2 3"
+./push-swap/main.go "0 one 2 3"
 
-./push-swap "1 2 2 3"
+./push-swap/main.go "1 2 2 3"
 
 ./checker
 

@@ -41,8 +41,8 @@ func Sb(b *Stack, print bool) {
 }
 
 func Ss(a *Stack, b *Stack, print bool) {
-	Sa(a, print)
-	Sb(b, print)
+	Sa(a, false)
+	Sb(b, false)
 
 	if print {
 		fmt.Println("ss")
@@ -83,8 +83,8 @@ func Rb(b *Stack, print bool) {
 }
 
 func Rr(a *Stack, b *Stack, print bool) {
-	Ra(a, print)
-	Rb(b, print)
+	Ra(a, false)
+	Rb(b, false)
 
 	if print {
 		fmt.Println("rr")

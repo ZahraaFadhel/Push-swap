@@ -40,9 +40,9 @@ func ThreeElementsSort(a *Stack) int {
 
 func check(stack *Stack) (string, string, string) {
     // item1, item2, item3
-    item1 := stack.Pop() // first, TOP of the stack
-    item2 := stack.Pop()
-    item3 := stack.Pop() // last
+    item1 := stack.Pop().data // first, TOP of the stack
+    item2 := stack.Pop().data
+    item3 := stack.Pop().data // last
 
     max := int(math.Max(float64(item1), math.Max(float64(item2), float64(item3))))
     min := int(math.Min(float64(item1), math.Min(float64(item2), float64(item3))))
