@@ -7,7 +7,7 @@ echo -e
 
 echo '2- Try to run ./push-swap "2 1 3 6 5 8". does it display a valid solution and less than 9 instructions?'
 go run ./push-swap "2 1 3 6 5 8"
-echo -e "Total number of instructions: $(go run ./push-swap "$ARG" | wc -l)"
+echo -e "Total number of instructions: $(go run ./push-swap "2 1 3 6 5 8" | wc -l)"
 
 
 echo -e
@@ -32,7 +32,7 @@ echo '6- Try to run ./push-swap "<5 random numbers>" with 5 random numbers inste
 echo 'Enter 5 numbers seperated by spaces:' 
 read -p "> " Input
 go run ./push-swap "$Input"
-echo -e "Total number of instructions: $(go run ./push-swap "$ARG" | wc -l)"
+echo -e "Total number of instructions: $(go run ./push-swap "$Input" | wc -l)"
 
 
 echo -e 
@@ -41,7 +41,7 @@ echo '7- Again, Try to run ./push-swap "<5 random numbers>" with another 5 rando
 echo 'Enter 5 numbers seperated by spaces:' 
 read -p "> " Input
 go run ./push-swap "$Input"
-echo -e "Total number of instructions: $(go run ./push-swap "$ARG" | wc -l)"
+echo -e "Total number of instructions: $(go run ./push-swap "$Input" | wc -l)"
 
 echo -e 
 

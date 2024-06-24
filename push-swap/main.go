@@ -43,5 +43,4 @@ func main() {
 
 	// fmt.Println("Is the Stack Sorted?", StackA.IsSorted())
 	// fmt.Println("How many instructions?", count)
-
 }
